@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    text-align: center;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+.job {
+    font-size: 0.8em;
+    color: #ccc;
+}
+.profilePic {
+    aliign: auto;
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%;
+    margin-top: 16px;
+}
+.bgGrey {
+    background-color: #f9f9f9;
+}
+.padding5 {
+    padding: 20px 0 20px 0;
+}
+
+.projectContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.projectItem {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.expertiseContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.chips {
+    background-color: #000000;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    border-radius: 8px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
