@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="text-center mt-[20px]">
+        <form id="pokemon-form" class="inline-block">
+            <input type="text" id="pokemon-input" placeholder="Enter Pokemon Name" class="p-[10px] border-[1px] border-[#ddd] rounded-[5px] w-[200px]">
+            <button type="submit" class="py-[10px] px-[20px] bg-[#ff6347] text-white rounded-[5px] cursor-pointer">Search</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('pokemon-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const pokemonName = document.getElementById('pokemon-input').value.toLowerCase();
+            try {
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+                if (!response.ok) throw new Error('Pokemon not found');
+                const data = await response.json();
+                document.getElementById('pokemon-name').innerText = data.name.charAt(0).toUpperCase() + data.name.slice(1);
+                document.getElementById('pokemon-height').innerText = `Height: ${data.height}`;
+                document.getElementById('pokemon-weight').innerText = `Weight: ${data.weight}`;
+                document.getElementById('pokemon-image').src = data.sprites.front_default;
+            } catch (error) {
+                alert(error.message);
+            }
+        });
+    </script>
+    <div id="pokemon-data" style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
+        <h1 class="text-xl text-[#ff6347]">Pokemon Data</h1>
+        <div class="inline-block border-2 border-[#ddd] rounded-[10px] p-[20px] shadow-lg mt-10">
+            <img id="pokemon-image" alt="Pokemon" class="w-[150px] h-[150px] mb-[20px]">
+            <h2 id="pokemon-name" class="m-[10px] text-[#333]">-</h2>
+            <p id="pokemon-height" class="m-[5px] text-[#555]">Height: -</p>
+            <p id="pokemon-weight" class="m-[5px] text-[#555]">Weight: -</p>
+        </div>
+    </div>
+</body>
+</html>

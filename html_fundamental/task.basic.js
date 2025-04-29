@@ -5,7 +5,7 @@
  */
 function hitungBilanganGanjil(n) {
   if (!Number.isFinite(n)) return "Error: `n` must be a number"
-    return n % 2 === 0 ? n/2 : (n + 1) / 2;
+  return (n % 2 === 0) ? n / 2 : (n + 1) / 2;
 }
 console.log(hitungBilanganGanjil(11)); // 6
 console.log(hitungBilanganGanjil(10)); // 5
@@ -16,8 +16,8 @@ console.log(hitungBilanganGanjil(10)); // 5
  * @returns boolean whether the year is a leap year or not
  */
 function cekTahunKabisat(tahun) {
-  if (!Number.isFinite(tahun)) return "Error: `tahun` must be a number"
-    return tahun % 4 === 0
+  if (!Number.isFinite(tahun)) return "Error: `tahun` must be a number";
+   return tahun % 4 === 0;
 }
 console.log(cekTahunKabisat(2024)); // true
 
@@ -181,8 +181,8 @@ function hitungJumlahVokal(kata) {
   let kataInString = String(kata);
   let jumlahVokal = 0;
   const vokal = ['a', 'i', 'u', 'e', 'o'];
-  for (let i = 0; i < kataInString.length; i++) {
-    if (vokal.includes(kataInString[i].toLowerCase())) {
+  for (const char of kataInString) {
+    if (vokal.includes(char.toLowerCase())) {
       jumlahVokal++;
     }
   }
@@ -247,8 +247,8 @@ function hitungKemunculanKata(kalimat, kata) {
   if (typeof kalimat !== "string" && typeof kata !== "string") return "Error: `kalimat` and `kata` must be a string"
   const words = kalimat.split(" ");
   let count = 0;
-  for (let i = 0; i < words.length; i++) {
-    if (words[i] === kata) {
+  for (const word of words) {
+    if (word === kata) {
       count++;
     }
   }
@@ -264,10 +264,10 @@ console.log(hitungKemunculanKata("Saya suka makan nasi, saya juga suka minum air
 function cariBilanganGanjilTerbesar(arr) {
   if (!Array.isArray(arr)) return "Error: `arr` must be an array"
   let maxOdd = null;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 !== 0) {
-      if (maxOdd === null || arr[i] > maxOdd) {
-        maxOdd = arr[i];
+  for (const num of arr) {
+    if (num % 2 !== 0) {
+      if (maxOdd === null || num > maxOdd) {
+        maxOdd = num;
       }
     }
   }
@@ -431,7 +431,29 @@ function hitungKombinasi(n, r) {
 
 console.log(hitungKombinasi(5, 2)); // 10
 
+let student = [
+  { name: "John", age: 20 },
+  { name: "Jane", age: 22 }
+];
 
+// Shallow copy
+let shallowCopy = [...student];
+
+// Deep copy
+let deepCopy = JSON.parse(JSON.stringify(student));
+
+shallowCopy[0].name = "John Doe";
+deepCopy[0].name = "Sam";
+
+console.log(shallowCopy);
+console.log(deepCopy);
+console.log(student);
+
+let a;
+a.forEach((item) => {
+    console.log(item);
+  }
+)
 
 
 
