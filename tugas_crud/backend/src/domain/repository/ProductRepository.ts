@@ -25,28 +25,19 @@ export interface ProductRepository {
     /**
      * Handle to create a new product.
      * @param product - The product to create.
-     * 
-     * TODO: Refactor to use DomainWrapper and add response to determine
-     * when the product is successfully created or not
      */
-    createProduct(product: ProductDomain) : Promise<void>;
+    createProduct(product: ProductDomain) : Promise<DomainWrapper<void>>;
 
     /**
      * Handle to update an existing product.
      * @param id - The id of the product to update.
      * @param product - The updated product data.
-     * 
-     * TODO: Refactor to use DomainWrapper and add response to determine
-     * when the product is successfully updated or not
      */
-    updateProduct(id: string, product: ProductDomain): Promise<void>;
+    updateProduct(id: string, product: ProductDomain): Promise<DomainWrapper<void>>;
 
     /**
      * Handle to delete a product by id.
      * @param id - The id of the product to delete.
-     * 
-     * TODO: Refactor to use DomainWrapper and add response to determine
-     * when the product is successfully deleted or not
      */
-    deleteProduct(id: string): Promise<void>;
+    deleteProduct(id: string): Promise<DomainWrapper<void>>;
 }

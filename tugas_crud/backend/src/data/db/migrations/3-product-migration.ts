@@ -1,7 +1,6 @@
 import { QueryInterface, DataTypes } from "sequelize";
-import { PRODUCT_TABLE_NAME } from "../utils/DBConst.js";
+import { CATEGORY_TABLE_NAME, PRODUCT_TABLE_NAME } from "../utils/DBConst.js";
 
-//TODO: Learn flow of this file
 export default {
     up: async (queryInterface: QueryInterface) => {
         await queryInterface.createTable(PRODUCT_TABLE_NAME, {
@@ -18,14 +17,23 @@ export default {
                 type: DataTypes.FLOAT,
                 allowNull: true,
             },
-            category: {
-                type: DataTypes.STRING,
-                allowNull: false,
-                unique: true,
-            },
             stock: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
+            },
+            image: {
+                type: DataTypes.STRING,
+                allowNull: true,
+            },
+            categoryId: {
+                type: DataTypes.STRING,
+                allowNull: true,
+                references: {
+                    model: CATEGORY_TABLE_NAME,
+                        key: 'id'
+                    },
+                onUpdate: 'CASCADE',
+                onDelete: 'CASCADE'
             },
             isActive: {
                 type: DataTypes.BOOLEAN,

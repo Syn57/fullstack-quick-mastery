@@ -1,11 +1,11 @@
-import { Model, DataTypes, Sequelize, ForeignKey } from "sequelize";
-import { PRODUCT_MODEL_NAME, PRODUCT_TABLE_NAME } from "../utils/DBConst.js";
-import { ProductDB } from "./type/ProductDB.js";
+import { DataTypes, Model, Sequelize } from "sequelize";
+import { USER_MODEL_NAME, USER_TABLE_NAME } from "../utils/DBConst.js";
+import { UserDB } from "./type/UserDB.js";
 
-class ProductModel extends Model<ProductDB> {
+class UserModel extends Model<UserDB>  {
 
     static initModel(sequelize: Sequelize) {
-        ProductModel.init({   
+        UserModel.init({   
             id: {
                 type: DataTypes.UUID,
                 defaultValue: DataTypes.UUIDV4,
@@ -15,21 +15,21 @@ class ProductModel extends Model<ProductDB> {
                 type: DataTypes.STRING,
                 allowNull: true,
             },
-            price: {
-                type: DataTypes.FLOAT,
+            email: {
+                type: DataTypes.STRING,
                 allowNull: true,
             },
-            stock: {
-                type: DataTypes.INTEGER,
+            password: {
+                type: DataTypes.STRING,
+                allowNull: true,
+            },
+            contact: {
+                type: DataTypes.STRING,
                 allowNull: true,
             },
             image: {
                 type: DataTypes.STRING,
                 allowNull: true,
-            },
-            categoryId: {
-                type: DataTypes.UUID,
-                allowNull: false,
             },
             isActive: {
                 type: DataTypes.BOOLEAN,
@@ -46,10 +46,10 @@ class ProductModel extends Model<ProductDB> {
         },
         {
             sequelize,
-            modelName: PRODUCT_MODEL_NAME,
-            tableName: PRODUCT_TABLE_NAME,
+            modelName: USER_MODEL_NAME,
+            tableName: USER_TABLE_NAME,
         });
     }
 }
 
-export default ProductModel ;
+export default UserModel;

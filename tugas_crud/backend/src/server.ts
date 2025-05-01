@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import appRouter from "./presentation/routes/index.js";
 import "reflect-metadata";
-import initilizeDatabase from "./data/db/models/index.js";
+import initilizeDatabase from "./data/db/models/1-index.js";
 
 const app = express();
 

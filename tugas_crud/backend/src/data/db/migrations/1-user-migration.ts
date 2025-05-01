@@ -1,11 +1,9 @@
-import { Model, DataTypes, Sequelize, ForeignKey } from "sequelize";
-import { PRODUCT_MODEL_NAME, PRODUCT_TABLE_NAME } from "../utils/DBConst.js";
-import { ProductDB } from "./type/ProductDB.js";
+import { DataTypes, QueryInterface } from "sequelize";
+import { USER_TABLE_NAME } from "../utils/DBConst.js";
 
-class ProductModel extends Model<ProductDB> {
-
-    static initModel(sequelize: Sequelize) {
-        ProductModel.init({   
+export default {
+    up: async (queryInterface: QueryInterface) => {
+        await queryInterface.createTable(USER_TABLE_NAME, {
             id: {
                 type: DataTypes.UUID,
                 defaultValue: DataTypes.UUIDV4,
@@ -15,21 +13,21 @@ class ProductModel extends Model<ProductDB> {
                 type: DataTypes.STRING,
                 allowNull: true,
             },
-            price: {
-                type: DataTypes.FLOAT,
-                allowNull: true,
+            email: {
+                type: DataTypes.STRING,
+                allowNull: false,
             },
-            stock: {
-                type: DataTypes.INTEGER,
+            password: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+            contact: {
+                type: DataTypes.STRING,
                 allowNull: true,
             },
             image: {
                 type: DataTypes.STRING,
                 allowNull: true,
-            },
-            categoryId: {
-                type: DataTypes.UUID,
-                allowNull: false,
             },
             isActive: {
                 type: DataTypes.BOOLEAN,
@@ -38,18 +36,17 @@ class ProductModel extends Model<ProductDB> {
             createdAt: {
                 type: DataTypes.DATE,
                 allowNull: false,
+                defaultValue: new Date(),
             },
             updatedAt: {
                 type: DataTypes.DATE,
                 allowNull: false,
-            }
-        },
-        {
-            sequelize,
-            modelName: PRODUCT_MODEL_NAME,
-            tableName: PRODUCT_TABLE_NAME,
+                defaultValue: new Date(),
+            },
         });
-    }
-}
+    },
 
-export default ProductModel ;
+    down: async (queryInterface: QueryInterface) => {
+        await queryInterface.dropTable(USER_TABLE_NAME);
+    },
+};

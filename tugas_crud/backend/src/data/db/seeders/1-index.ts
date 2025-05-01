@@ -6,7 +6,6 @@ import { getDirname, getBasename } from "../global/PathGlobal.js";
 import config from "../config/App.js";
 
 // TODO: Refactor the seeder like the models
-
 const __dirname = getDirname(import.meta.url);
 const basename = getBasename(import.meta.url);
 

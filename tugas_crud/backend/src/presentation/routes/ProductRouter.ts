@@ -1,12 +1,13 @@
 import express from "express";
 import ProductController from "../controllers/ProductController.js";
+import { body } from "express-validator";
 
 const productRouter = express.Router();
 
-productRouter.get("/api/product", ProductController.getAllProducts);
-productRouter.get("/api/product/:id", ProductController.getProductById);
-productRouter.post("/api/product", ProductController.createProduct);
-productRouter.put("/api/product/:id", ProductController.updateProduct);
-productRouter.delete("/api/product/:id", ProductController.deleteProduct);
+productRouter.get("/", ProductController.getAllProducts);
+productRouter.get("/:id", ProductController.getProductById);
+productRouter.post("", ProductController.createProduct);
+productRouter.put("/:id", ProductController.updateProduct);
+productRouter.delete("/:id", ProductController.deleteProduct);
 
 export default productRouter;

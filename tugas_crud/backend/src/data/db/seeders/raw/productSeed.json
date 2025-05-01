@@ -1,0 +1,170 @@
+[
+    {
+        "id": "1",
+        "name": "IPHONE 11 64 GB FULLSET SECOND/BEKAS ORIGINAL 100% MULUS - wifi, 64 gb",
+        "price": 3500000,
+        "categoryId": "CAT1",
+        "stock": 100,
+        "image": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2022/3/23/8a0b1f8b-84de-4829-9055-bc88072bfe3a.jpg.webp?ect=4g"
+    },
+    {
+        "id": "2",
+        "name": "APPLE iPhone 13 128GB 256GB 512GB A15 Bionic CPU 6C / GPU 4C Resmi IBOX - Midnight Black, 128 GB",
+        "price": 8499000,
+        "categoryId": "CAT1",
+        "stock": 200,
+        "image" : "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    },
+    {
+        "id": "3",
+        "name": "Apple iPhone 15 - Garansi Resmi Apple Indonesia - 128GB, Black",
+        "price": 11499000,
+        "categoryId": "CAT1",
+        "stock": 50,
+        "image": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    },
+    {
+        "id": "4",
+        "name": "Nubia NEO 2 5G NFC RAM 8GB+ROM 256GB 6.000 mAh Garansi Resmi - Storm Gray",
+        "price": 2699000,
+        "categoryId": "CAT1",
+        "stock": 10,
+        "image": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2025/1/20/fbcfc33c-d482-42a8-bb68-1c67b6ad7e19.jpg.webp?ect=4g"
+    },
+    {
+        "id": "5",
+        "name": "Motorola G45 5G 8+8/128GB - Up to 16GB Extended RAM - Snapdragon 6s Gen 3 - 6.5 inch Screen Size - Gorilla Glass 3 - 120Hz - 50MP Main Camera - 5000mAh - NFC - Dolby Atmos Stereo Speaker - Blue",
+        "price": 2299000,
+        "categoryId": "CAT1",
+        "stock": 500,
+        "image": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2025/1/20/fbcfc33c-d482-42a8-bb68-1c67b6ad7e19.jpg.webp?ect=4g"
+    },
+    {
+        "id": "6",
+        "name": "Samsung Galaxy A14 5G - 128GB - 6GB RAM - Garansi Resmi SEIN",
+        "price": 2999000,
+        "categoryId": "CAT1",
+        "stock": 300,
+        "image": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    },
+    {
+        "id": "7",
+        "name": "Xiaomi Redmi Note 12 Pro+ 5G - 256GB - 8GB RAM - Garansi Resmi SEIN",
+        "price": 4999000,
+        "categoryId": "CAT1",
+        "stock": 150,
+        "image": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    },
+    {
+        "id": "8",
+        "name": "Vivo V25 Pro 5G - 256GB - 12GB RAM - Garansi Resmi SEIN",
+        "price": 5999000,
+        "categoryId": "CAT1",
+        "stock": 80,
+        "image": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    },
+    {
+        "id": "9",
+        "name": "Oppo Reno 8 Pro 5G - 256GB - 12GB RAM - Garansi Resmi SEIN",
+        "price": 6999000,
+        "categoryId": "CAT1",
+        "stock": 60,
+        "image": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    },
+    {
+        "id": "10",
+        "name": "Realme GT 2 Pro 5G - 256GB - 12GB RAM - Garansi Resmi SEIN",
+        "price": 7999000,
+        "categoryId": "CAT1",
+        "stock": 40,
+        "image": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    },
+    {
+        "id": "11",
+        "name": "VGA Graphic Card - 12GB GDDR6X - 3840 CUDA Core - 1.71GHz Boost Clock - 6x Mini DP - 1x HDMI - 1x USB-C - 10GB/s",
+        "price": 999000,
+        "categoryId": "CAT2",
+        "stock": 30,
+        "image": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    },
+    {
+        "id": "12",
+        "name": "VGA Graphic Card - 16GB GDDR6X - 4608 CUDA Core - 1.78GHz Boost Clock - 6x Mini DP - 1x HDMI - 1x USB-C - 10GB/s",
+        "price": 1999000,
+        "categoryId": "CAT2",
+        "stock": 20,
+        "image": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    },
+    {
+        "id": "13",
+        "name": "VGA Graphic Card - 24GB GDDR6X - 5888 CUDA Core - 1.86GHz Boost Clock - 6x Mini DP - 1x HDMI - 1x USB-C - 10GB/s",
+        "price": 1999000,
+        "categoryId": "CAT2",
+        "stock": 10,
+        "image": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    },
+    {
+        "id": "14",
+        "name": "VGA Graphic Card - 32GB GDDR6X - 6912 CUDA Core - 1.95GHz Boost Clock - 6x Mini DP - 1x HDMI - 1x USB-C - 10GB/s",
+        "price": 1199000,
+        "categoryId": "CAT2",
+        "stock": 5,
+        "image": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    },
+    {
+        "id": "15",
+        "name": "VGA Graphic Card - 48GB GDDR6X - 8704 CUDA Core - 2.04GHz Boost Clock - 6x Mini DP - 1x HDMI - 1x USB-C - 10GB/s",
+        "price": 299000,
+        "categoryId": "CAT2",
+        "stock": 100,
+        "image": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    },
+    {
+        "id": "16",
+        "name": "Acer Predator Helios 300 - Intel Core i7-11800H - 16GB RAM - 512GB SSD - NVIDIA GeForce RTX 3060 - Garansi Resmi SEIN",
+        "price": 13990000,
+        "categoryId": "CAT3",
+        "stock": 5,
+        "image": "https://images.tokopedia.net/img/cache/700/OJWluG/2022/3/1/4f27e4cd-3c49-4822-ac48-980a45e828c4.jpg.webp?ect=4g"
+    },
+    {
+        "id": "17",
+        "name": "Asus ROG Zephyrus G14 - AMD Ryzen 9 5900HS - 16GB RAM - 512GB SSD - NVIDIA GeForce RTX 3060 - Garansi Resmi SEIN",
+        "price": 14990000,
+        "categoryId": "CAT3",
+        "stock": 5,
+        "image": "https://images.tokopedia.net/img/cache/700/attachment/2021/11/11/164898963/164898963_f8c34f88-bc6f-43f9-a1e8-b082e34fd5f2.jpg?ect=4g"
+    },
+    {
+        "id": "18",
+        "name": "Dell XPS 13 - Intel Core i7-1165G7 - 16GB RAM - 512GB SSD - Intel Iris Xe Graphics - Garansi Resmi SEIN",
+        "price": 15990000,
+        "categoryId": "CAT3",
+        "stock": 5,
+        "image": "https://images-cdn.ubuy.co.id/635f8ad9afed8b54834faff3-dell-xps-13-plus-9320-13-4.jpg"
+    },
+    {
+        "id": "19",
+        "name": "HP Envy 13 - Intel Core i7-1165G7 - 16GB RAM - 512GB SSD - NVIDIA GeForce MX450 - Garansi Resmi SEIN",
+        "price": 16990000,
+        "categoryId": "CAT3",
+        "stock": 5,
+        "image": "https://images.tokopedia.net/img/cache/700/OJWluG/2024/4/24/1aeac1b5-93f9-4487-84cf-f3103bda8fdf.jpg"
+    },
+    {
+        "id": "20",
+        "name": "Lenovo Yoga Slim 7 - AMD Ryzen 7 5800H - 16GB RAM - 512GB SSD - NVIDIA GeForce MX450 - Garansi Resmi SEIN",
+        "price": 17990000,
+        "categoryId": "CAT3",
+        "stock": 5,
+        "image": "https://images.tokopedia.net/img/cache/700/OJWluG/2022/6/9/1f29cb00-eb11-44e6-817d-ea74c65866c2.jpg?ect=4g"
+    },
+    {
+        "id": "21",
+        "name": "Vivo V25 Pro 5G - 256GB - 12GB RAM - Garansi Resmi SEIN",
+        "price": 5999000,
+        "categoryId": "CAT1",
+        "stock": 80,
+        "image": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2025/2/1/d1276391-b360-459b-84e3-3cb815586878.png"
+    }
+]

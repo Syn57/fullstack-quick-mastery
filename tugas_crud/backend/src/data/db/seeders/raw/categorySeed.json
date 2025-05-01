@@ -1,0 +1,14 @@
+[
+    {
+        "id": "CAT1",
+        "name": "Smartphone"
+    },
+    {
+        "id": "CAT2",
+        "name": "Graphics Card"
+    },
+    {
+        "id": "CAT3",
+        "name": "Laptop"
+    }
+]

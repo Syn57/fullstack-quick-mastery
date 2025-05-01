@@ -1,5 +1,4 @@
-interface ProductDomain {
-    id: string;
+export interface NewProductReqBody {
     name: string;
     price: number;
     stock: number;
