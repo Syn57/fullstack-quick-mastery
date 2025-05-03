@@ -6,7 +6,8 @@ import ProductModel from "./product.model.js";
 import CategoryModel from "./category.model.js";
 import UserModel from "./user.model.js";
 import CartModel from "./cart.model.js";
-import { CATEGORY_MODEL_NAME, CATEGORY_TABLE_NAME, PRODUCT_TABLE_NAME } from "../utils/DBConst.js";
+import { CART_PRODUCT_TABLE_NAME, CART_TABLE_NAME, CATEGORY_TABLE_NAME, PRODUCT_TABLE_NAME } from "../utils/DBConst.js";
+import CartProductModel from "./cart.product.model.js";
 
 const env = (process.env.NODE_ENV as keyof typeof configJson) || "development";
 const config: DBConfig = configJson[env];
@@ -26,6 +27,7 @@ const initAssociations = async () => {
         onUpdate: "CASCADE",
         as: CATEGORY_TABLE_NAME
     });
+
     CategoryModel.hasMany(ProductModel, {
         foreignKey: "categoryId",
         as: PRODUCT_TABLE_NAME,
@@ -33,29 +35,20 @@ const initAssociations = async () => {
         onUpdate: "CASCADE",
     });
 
+    CartModel.belongsToMany(ProductModel, {
+        through: CART_PRODUCT_TABLE_NAME
+    })
 
+    ProductModel.belongsToMany(CartModel, {
+        through: CART_PRODUCT_TABLE_NAME
+    })
 
-    // CartModel.hasMany(ProductModel, {
-    //     foreignKey: "cartId",
-    //     sourceKey: "id",
-    //     as: "products",
-    // })
-    // ProductModel.belongsTo(CartModel, {
-    //     foreignKey: "cartId",
-    //     targetKey: "id",
-    //     as: "carts",
-    // })
-
-    // CartModel.hasMany(UserModel, {
-    //     foreignKey: "cartId",
-    //     sourceKey: "id",
-    //     as: "users",
-    // })
-    // UserModel.belongsTo(CartModel, {
-    //     foreignKey: "cartId",
-    //     targetKey: "id",
-    //     as: "carts",
-    // })
+    UserModel.hasMany(CartModel, {
+        foreignKey: "userId",
+        as: CART_TABLE_NAME,
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+    })
 };
 
 /**
@@ -71,6 +64,7 @@ const loadModels = async () => {
     CategoryModel.initModel(sequelize);
     ProductModel.initModel(sequelize);
     CartModel.initModel(sequelize);
+    CartProductModel.initModel(sequelize);
 };  
 
 export default function initilizeDatabase() {

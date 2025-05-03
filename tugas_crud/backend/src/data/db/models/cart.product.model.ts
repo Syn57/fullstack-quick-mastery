@@ -1,26 +1,22 @@
 import { DataTypes, Model, Sequelize } from "sequelize";
-import { CART_MODEL_NAME, CART_TABLE_NAME } from "../utils/DBConst.js";
-import { CartDB } from "./type/CartDB.js";
+import { CartProductDB } from "./type/CartProductDB.js";
+import { CART_PRODUCT_MODEL_NAME, CART_PRODUCT_TABLE_NAME } from "../utils/DBConst.js";
 
-class CartModel extends Model<CartDB> {
+class CartProductModel extends Model<CartProductDB> {
 
     static initModel(sequelize: Sequelize) {
-        CartModel.init({   
+        CartProductModel.init({   
             id: {
                 type: DataTypes.UUID,
                 defaultValue: DataTypes.UUIDV4,
                 primaryKey: true,
             },
-            userId: {
-                type: DataTypes.UUIDV4,
+            productId: {
+                type: DataTypes.UUID,
                 allowNull: true,
             },
-            quantity: {
-                type: DataTypes.INTEGER,
-                allowNull: true,
-            },
-            totalPrice: {
-                type: DataTypes.BIGINT,
+            cartId: {
+                type: DataTypes.UUID,
                 allowNull: true,
             },
             isActive: {
@@ -38,10 +34,10 @@ class CartModel extends Model<CartDB> {
         },
         {
             sequelize,
-            modelName: CART_MODEL_NAME,
-            tableName: CART_TABLE_NAME,
+            modelName: CART_PRODUCT_MODEL_NAME,
+            tableName: CART_PRODUCT_TABLE_NAME,
         });
     }
 }
 
-export default CartModel;
+export default CartProductModel;

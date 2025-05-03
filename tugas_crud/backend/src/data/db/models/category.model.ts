@@ -15,7 +15,7 @@ class CategoryModel extends Model<CategoryDB> {
     static initModel(sequelize: Sequelize) {
         CategoryModel.init({   
             id: {
-                type: DataTypes.UUID,
+                type: DataTypes.STRING,
                 defaultValue: DataTypes.UUIDV4,
                 primaryKey: true,
             },

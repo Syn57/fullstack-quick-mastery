@@ -1,31 +1,33 @@
 import { DataTypes, QueryInterface } from "sequelize";
-import { CART_TABLE_NAME, PRODUCT_TABLE_NAME, USER_TABLE_NAME } from "../utils/DBConst.js";
+import { CART_PRODUCT_TABLE_NAME, CART_TABLE_NAME, PRODUCT_TABLE_NAME } from "../utils/DBConst.js";
 
 export default {
     up: async (queryInterface: QueryInterface) => {
-        await queryInterface.createTable(CART_TABLE_NAME, {
+        await queryInterface.createTable(CART_PRODUCT_TABLE_NAME, {
             id: {
-                type: DataTypes.UUID,
+                type: DataTypes.STRING,
                 defaultValue: DataTypes.UUIDV4,
                 primaryKey: true,
             },
-            userId: {
+            productId: {
                 type: DataTypes.UUID,
                 allowNull: true,
                 references: {
-                    model: USER_TABLE_NAME,
+                    model: PRODUCT_TABLE_NAME,
                     key: 'id'
                 },
                 onUpdate: 'CASCADE',
                 onDelete: 'CASCADE'
             },
-            quantity: {
-                type: DataTypes.INTEGER,
-                allowNull: false,
-            },
-            totalPrice: {
-                type: DataTypes.INTEGER,
-                allowNull: false,
+            cartId: {
+                type: DataTypes.UUID,
+                allowNull: true,
+                references: {
+                    model: CART_TABLE_NAME,
+                    key: 'id'
+                },
+                onUpdate: 'CASCADE',
+                onDelete: 'CASCADE'
             },
             isActive: {
                 type: DataTypes.BOOLEAN,
@@ -45,6 +47,6 @@ export default {
     },
 
     down: async (queryInterface: QueryInterface) => {
-        await queryInterface.dropTable(CART_TABLE_NAME);
+        await queryInterface.dropTable(CART_PRODUCT_TABLE_NAME);
     },
 };

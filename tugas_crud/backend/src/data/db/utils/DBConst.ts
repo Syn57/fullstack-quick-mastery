@@ -6,3 +6,5 @@ export const USER_TABLE_NAME = "users";
 export const USER_MODEL_NAME = "user"; 
 export const CART_TABLE_NAME = "carts"; 
 export const CART_MODEL_NAME = "cart"; 
+export const CART_PRODUCT_TABLE_NAME = "cart_products";
+export const CART_PRODUCT_MODEL_NAME = "cart_product";

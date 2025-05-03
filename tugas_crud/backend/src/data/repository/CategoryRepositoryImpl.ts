@@ -9,24 +9,23 @@ import { PRODUCT_TABLE_NAME } from "../db/utils/DBConst.js";
 
 class CategoryRepositoryImpl implements CategoryRepository {
     async getCategoriesWithProduct(): Promise<DomainWrapper<CategoryWithProductDomain[]>> {
-        return new Promise((resolve, _) => {
-            CategoryModel.findAll({
+        try {
+            const categories = await CategoryModel.findAll({
                 include: {
                     model: ProductModel,
                     as: PRODUCT_TABLE_NAME,
                     attributes: ["name"]
                 }
-            })
-                .then((categories: CategoryModel[]) => {
-                    const categoriesValues = categories.map((category: CategoryModel) => {
-                        return mapCategoryDBToCategoryWithProductDomain(category.dataValues as CategoryWithProductDB);
-                    }); 
-                    resolve({ type : "success", value: categoriesValues});
-                })
-                .catch((error: Error) => {
-                    resolve({type: "error", message: error.message});
-                });
-        })
+            });
+            
+            const categoriesValues = categories.map((category: CategoryModel) => {
+                return mapCategoryDBToCategoryWithProductDomain(category.dataValues as CategoryWithProductDB);
+            });
+            
+            return { type: "success", value: categoriesValues };
+        } catch (error) {
+            return { type: "error", message: (error as Error).message };
+        }
     }
 
     async getCategories(): Promise<DomainWrapper<string[]>> {
