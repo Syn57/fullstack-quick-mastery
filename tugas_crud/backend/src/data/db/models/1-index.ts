@@ -6,8 +6,7 @@ import ProductModel from "./product.model.js";
 import CategoryModel from "./category.model.js";
 import UserModel from "./user.model.js";
 import CartModel from "./cart.model.js";
-import { CART_PRODUCT_TABLE_NAME, CART_TABLE_NAME, CATEGORY_TABLE_NAME, PRODUCT_TABLE_NAME } from "../utils/DBConst.js";
-import CartProductModel from "./cart.product.model.js";
+import { CART_TABLE_NAME, CATEGORY_TABLE_NAME, PRODUCT_TABLE_NAME } from "../utils/DBConst.js";
 
 const env = (process.env.NODE_ENV as keyof typeof configJson) || "development";
 const config: DBConfig = configJson[env];
@@ -35,12 +34,11 @@ const initAssociations = async () => {
         onUpdate: "CASCADE",
     });
 
-    CartModel.belongsToMany(ProductModel, {
-        through: CART_PRODUCT_TABLE_NAME
-    })
-
-    ProductModel.belongsToMany(CartModel, {
-        through: CART_PRODUCT_TABLE_NAME
+    CartModel.belongsTo(ProductModel, {
+        foreignKey: "productId",
+        as: PRODUCT_TABLE_NAME,
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
     })
 
     UserModel.hasMany(CartModel, {
@@ -64,7 +62,7 @@ const loadModels = async () => {
     CategoryModel.initModel(sequelize);
     ProductModel.initModel(sequelize);
     CartModel.initModel(sequelize);
-    CartProductModel.initModel(sequelize);
+    // CartProductModel.initModel(sequelize);
 };  
 
 export default function initilizeDatabase() {

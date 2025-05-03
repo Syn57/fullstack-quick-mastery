@@ -1,9 +1,10 @@
 export interface CartDB {
     id: string;
     userId: string;
-    quantity: number;
-    totalPrice: number;
-    isActive: number;
+    productId: string;
+    quantity: number | null;
+    totalPrice: number | null;
+    isActive: boolean;
     createdAt: Date;
     updatedAt: Date;
 }

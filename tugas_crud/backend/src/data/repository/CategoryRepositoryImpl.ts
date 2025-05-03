@@ -6,6 +6,7 @@ import { mapCategoryDBToCategoryWithProductDomain } from "../db/mapper/CategoryM
 import { CategoryWithProductDB } from "../db/models/type/CategoryWithProductDB.js";
 import { CategoryWithProductDomain } from "src/domain/model/CategoryWithProductDomain.js";
 import { PRODUCT_TABLE_NAME } from "../db/utils/DBConst.js";
+import { safeErrorMapper } from "../../common/MapperUtils.js";
 
 class CategoryRepositoryImpl implements CategoryRepository {
     async getCategoriesWithProduct(): Promise<DomainWrapper<CategoryWithProductDomain[]>> {
@@ -17,31 +18,27 @@ class CategoryRepositoryImpl implements CategoryRepository {
                     attributes: ["name"]
                 }
             });
-            
             const categoriesValues = categories.map((category: CategoryModel) => {
                 return mapCategoryDBToCategoryWithProductDomain(category.dataValues as CategoryWithProductDB);
             });
-            
             return { type: "success", value: categoriesValues };
         } catch (error) {
-            return { type: "error", message: (error as Error).message };
+            return safeErrorMapper(error);
         }
     }
 
     async getCategories(): Promise<DomainWrapper<string[]>> {
-        return new Promise((resolve, _) => {
-            CategoryModel.findAll()
-                .then((categories: CategoryModel[]) => {
+        try {
+            const categories = await CategoryModel.findAll();
 
-                    const categoriesValues = categories.map((category: CategoryModel) => {
-                        return category.dataValues.name;
-                    }); 
-                    resolve({ type : "success", value: categoriesValues});
-                })
-                .catch((error: Error) => {
-                    resolve({type: "error", message: error.message});
-                });
-        })
+            const categoriesValues = categories.map((category: CategoryModel) => {
+                return category.dataValues.name;
+            }); 
+            
+            return { type: "success", value: categoriesValues };
+        } catch (error) {
+            return safeErrorMapper(error);
+        }
     }
 }
 

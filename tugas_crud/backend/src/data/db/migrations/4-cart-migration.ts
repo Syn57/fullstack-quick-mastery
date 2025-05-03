@@ -19,6 +19,16 @@ export default {
                 onUpdate: 'CASCADE',
                 onDelete: 'CASCADE'
             },
+            productId: {
+                type: DataTypes.UUID,
+                allowNull: true,
+                references: {
+                    model: PRODUCT_TABLE_NAME,
+                    key: 'id'
+                },
+                onUpdate: 'CASCADE',
+                onDelete: 'CASCADE'
+            },
             quantity: {
                 type: DataTypes.INTEGER,
                 allowNull: false,

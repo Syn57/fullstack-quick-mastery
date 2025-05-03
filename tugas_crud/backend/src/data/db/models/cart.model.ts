@@ -12,7 +12,11 @@ class CartModel extends Model<CartDB> {
                 primaryKey: true,
             },
             userId: {
-                type: DataTypes.UUIDV4,
+                type: DataTypes.UUID,
+                allowNull: true,
+            },
+            productId: {
+                type: DataTypes.UUID,
                 allowNull: true,
             },
             quantity: {
